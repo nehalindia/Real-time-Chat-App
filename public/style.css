@@ -10,11 +10,12 @@ body{
     justify-content: center;
     min-height: 100vh;
     background: #f8f8f8;
+    background-image: url();
     font-family: Arial, Helvetica, sans-serif;
 }
 
 section.chat_section{
-    width : 500px;
+    width : 700px;
     max-width: 90%;
     background: #fff;
     box-shadow: 0 10px 15px -3px rgba(0,-0,-0,0.1), 0 4px 6px -2p rgba(0,-0, -0, -0.5);
@@ -22,9 +23,10 @@ section.chat_section{
 
 .brand{
     padding: 20px;
-    background: #f1f1f1;
+    background: #ffc34d;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .brand h1{
@@ -35,12 +37,14 @@ section.chat_section{
 }
 
 .message_area{
-    height: 300px;
+    height: 400px;
     padding: 16px;
     display: flex;
+    background: #fff7e6;
     flex-direction: column;
     overflow-y: auto;
     padding-top: 40px;
+    position: relative;
 }
 
 #textarea{
@@ -49,11 +53,11 @@ section.chat_section{
     padding: 20px;
     font-size: 16px;
     outline: none;
-    background: #fbfbfb;
+    background:#ffe6b3;
 }
 
 .message {
-    padding: 20px;
+    padding: 15px;
     border-radius: 40px;
     margin-bottom: 40px;
     max-width: 300px;
@@ -61,13 +65,14 @@ section.chat_section{
 }
 
 .incoming {
-    background: #8f8be8;
+    background: #b2b0d8;
     color: #fff;
+    margin-right: auto;
 }
 
 .outgoing {
-    background: #e9eafd;
-    color: #787986;
+    background: #a8a9c2;
+    color: #000;
     margin-left: auto;
 }
 
@@ -78,3 +83,10 @@ section.chat_section{
     color: #333;
     font-size: 14px;
 }
+
+/* .backgroundname{
+    position: absolute;
+    size: 20px;
+    color: #000;
+    z-index: -1;
+} */
