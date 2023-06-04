@@ -20,6 +20,12 @@ app.get('/', (req,res) =>{
 })
 
 
-socketio.on('connection', (Socket) =>{
+socketio.on('connection', (socket) =>{
     console.log('connected socket')
+
+    socket.on('message', (msg) => {
+        // console.log(msg)
+        socket.broadcast.emit('message',msg)
+    })
+
 })

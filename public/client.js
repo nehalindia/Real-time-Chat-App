@@ -6,14 +6,14 @@ let messageArea = document.querySelector('.message_area')
 
 do{
     name1 = prompt('please enter the name')
-    console.log(name1)
+    // console.log(name1)
 }while(!name1)
 
 textarea.addEventListener('keyup', (e) =>{
    let a= e.code
-    console.log(e.key +" nehal "+a)
+    // console.log(e.key +" nehal "+a)
     if( e.key === "Enter"){
-        console.log("enter in if")
+        // console.log("enter in if")
         sendMessage(e.target.value)
     }
 })
@@ -21,10 +21,13 @@ textarea.addEventListener('keyup', (e) =>{
 function sendMessage(msg1){
     let msg ={
         user : name1,
-        message :msg1
+        message :msg1.trim()
     }
-
     appendMessage(msg, "outgoing")
+    textarea.value = ""
+
+    scroll1()
+    socket.emit('message', msg)
 } 
 
 function appendMessage(msg,type){
@@ -39,4 +42,14 @@ function appendMessage(msg,type){
     minDiv.innerHTML = markup
 
     messageArea.appendChild(minDiv)
+}
+
+socket.on('message', (msg) => {
+    // console.log(msg)
+    appendMessage(msg, "incoming")
+    scroll1()
+})
+
+function scroll1(){
+    messageArea.scrollTop = messageArea.scrollHeight
 }
